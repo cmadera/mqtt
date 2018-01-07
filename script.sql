@@ -8,6 +8,8 @@ CREATE TABLE measure (
 
 CREATE TABLE topic (
   id_topic int(11) NOT NULL,
+  nm_mqtt_server varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  nu_mqtt_port int(11) NOT NULL,
   nm_topic varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   nm_element varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   id_active varchar(1) COLLATE utf8_unicode_ci NOT NULL
