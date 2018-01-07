@@ -1,6 +1,3 @@
-<?php
-//echo "hello";
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -173,11 +170,11 @@ $conn->close();
                 title:{ display:true,  text:'Comparative chart between Temperature and Humidity' },
 				scales: {
                     yAxes: [{
-                        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        type: "linear", 
                         display: true, position: "left", id: "y-axis-1",
                         scaleLabel: { display: true, labelString: 'Temperature'  }
                     }, {
-                        type: "linear", // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        type: "linear", 
                         display: true, position: "right", id: "y-axis-2",
                         scaleLabel: { display: true, labelString: 'Humidity' },
                         gridLines: { drawOnChartArea: false },
