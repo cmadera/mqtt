@@ -93,7 +93,7 @@ if ($result->num_rows > 0) {
 		$nmElement =  $row["nm_element"];
 		$nmServer =  $row["nm_mqtt_server"];
 		$nuPort =  $row["nu_mqtt_port"];
-        echo "	client$idTopic = new Paho.MQTT.Client('$nmServer', Number($nuPort), 'bigbankClient$idTopic-$nmElement'); \n";
+        echo "	client$idTopic = new Paho.MQTT.Client('$nmServer', Number($nuPort), 'bigbank$idTopic-$nmElement".rand (1,100000)."'); \n";
         echo "	client$idTopic.onConnectionLost = onConnectionLost; \n";
         echo "	client$idTopic.onMessageArrived = onMessageArrived$idTopic; \n";
         echo "	client$idTopic.connect({onSuccess:onConnect$idTopic}); \n";
