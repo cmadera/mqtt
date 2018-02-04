@@ -21,3 +21,15 @@ ALTER TABLE topic  ADD PRIMARY KEY (id_topic);
 ALTER TABLE measure  MODIFY id_measure int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE topic  MODIFY id_topic int(11) NOT NULL AUTO_INCREMENT;
 
+-- Optimizing history table
+CREATE TABLE measuretemp
+  SELECT dt_measure  dt_measure, nm_topic,  format(avg(vl_topic),2) vl_topic FROM measure 
+   WHERE dt_measure <= NOW() - INTERVAL 2 DAY
+   GROUP BY nm_topic, DATE_FORMAT(dt_measure, '%Y/%m/%d %H:00');
+
+DELETE FROM measure WHERE dt_measure <= NOW() - INTERVAL 2 DAY;
+
+INSERT INTO measure (dt_measure, nm_topic, vl_topic)
+select dt_measure, nm_topic, vl_topic from measuretemp;
+
+DROP TABLE measuretemp;
