@@ -2,7 +2,7 @@
 CREATE TABLE measure (
   id_measure int(11) NOT NULL,
   nm_topic varchar(300) COLLATE utf8_unicode_ci NOT NULL,
-  vl_topic int(11) NOT NULL,
+  vl_topic float(11,2) NOT NULL,
   dt_measure datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
